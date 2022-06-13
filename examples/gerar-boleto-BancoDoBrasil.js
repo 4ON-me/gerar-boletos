@@ -3,28 +3,24 @@ const { Bancos, Boletos, streamToPromise } = require('../lib/index');
 const boleto = {
   banco: new Bancos.BancoBrasil(),
   pagador: {
+    registroNacional: '12345678912',
     nome: 'José Bonifácio de Andrada',
-    registroNacional: '12345678',
     endereco: {
       logradouro: 'Rua Pedro Lessa, 15',
-      bairro: 'Centro',
       cidade: 'Rio de Janeiro',
       estadoUF: 'RJ',
       cep: '20030-030'
     }
   },
-  instrucoes: ['Após o vencimento Mora dia R$ 1,59', 'Após o vencimento, multa de 2%'],
+  // instrucoes: ['Após o vencimento Mora dia R$ 1,59', 'Após o vencimento, multa de 2%'],
+
   beneficiario: {
     nome: 'Empresa Fictícia LTDA',
     cnpj:'43576788000191',
     dadosBancarios: {
       carteira: '09',
       agencia: '18455',
-      agenciaDigito: '4',
       conta: '1277165',
-      contaDigito: '1',
-      nossoNumero: '00000000061',
-      nossoNumeroDigito: '8'
     },
     endereco: {
       logradouro: 'Rua Pedro Lessa, 15',
@@ -35,13 +31,15 @@ const boleto = {
     }
   },
   boleto: {
-    numeroDocumento: '1001',
-    especieDocumento: 'DM',
-    valor: 110.00,
+    codigoBarraNumerico: '00193901800000011010000003128557664418431217',
+    linhaDigitavel: '00190000090312855766144184312179390180000001101',
+    numeroDocumento: '00031285576644184312',
+    especieDocumento: 'Outro',
+    valor: 5.39,
     datas: {
-      vencimento: '02-04-2020',
-      processamento: '02-04-2019',
-      documentos: '02-04-2019'
+      vencimento: '06-16-2022',
+      processamento: '06-13-2022',
+      documentos: '06-13-2022'
     }
   }
 };
